@@ -1,0 +1,33 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/El-Potato-Slayer/weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/El-Potato-Slayer/weather-app/issues"
+  },
+  "homepage": "https://github.com/El-Potato-Slayer/weather-app#readme",
+  "devDependencies": {
+    "babel-eslint": "10.1.x",
+    "eslint": "6.8.x",
+    "eslint-config-airbnb-base": "14.1.x",
+    "eslint-plugin-import": "2.20.x",
+    "stylelint": "13.3.x",
+    "stylelint-config-standard": "20.0.x",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "3.17.x",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
+  }
+}
