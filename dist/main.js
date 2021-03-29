@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("alert()\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("// import getWeather from './backend/weatherapi'\r\n\r\n// getWeather('London')\r\n//   .then(data => console.log(data))\r\n//   .catch(error => console.error(error.message));\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
