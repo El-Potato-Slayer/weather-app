@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script type="module" src="./main.js"></script>
-  <title>Document</title>
+  <title>Weather</title>
 </head>
 <body>
-  <main id="container">
-    <div>
-      <fieldset>
-        <label for="">City</label>
-        <input id="city" type="text">
+  <main id="container" class="h-screen relative">
+    <form class="absolute">
+      <fieldset class="relative">
+        <input id="city" type="text" placeholder="Enter city" class="rounded-3xl py-1 px-4">
+        <button id="submit" type="submit" class="absolute material-icons">search</button>
       </fieldset>
-      <button id="submit">Submit</button>
-    </div>
-    <div id="weather-info"></div>
+    </form>
+    <div id="weather-info" class="relative text-white"></div>
   </main>
 </body>
 </html>

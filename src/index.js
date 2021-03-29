@@ -1,3 +1,3 @@
-import displayWeather from './frontend/weather'
+import displayWeather from './frontend/weather';
 
-displayWeather()
+displayWeather();
