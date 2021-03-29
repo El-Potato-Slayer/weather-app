@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/frontend/helpers.js":
+/*!*********************************!*\
+  !*** ./src/frontend/helpers.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ removeChildren)\n/* harmony export */ });\nfunction removeChildren(parent) {\r\n  while (parent.firstChild) {\r\n    parent.firstChild.remove()\r\n  }\r\n}\n\n//# sourceURL=webpack://weather-app/./src/frontend/helpers.js?");
+
+/***/ }),
+
 /***/ "./src/frontend/weather.js":
 /*!*********************************!*\
   !*** ./src/frontend/weather.js ***!
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ displayWeather)\n/* harmony export */ });\n/* harmony import */ var _backend_weatherapi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../backend/weatherapi */ \"./src/backend/weatherapi.js\");\n\r\n\r\nfunction displayWeather() {\r\n  const city = document.getElementById('city').value\r\n  const submit = document.getElementById('submit')\r\n  submit.onclick = () => {\r\n    ;(0,_backend_weatherapi__WEBPACK_IMPORTED_MODULE_0__.default)(city)\r\n    .then(weather => {\r\n      const html = `\r\n      <p>Weather: ${weather.weather[0].description}</p>\r\n      <p>Temperature: ${weather.main.temp} °F</p>\r\n      <p>Min Temperature: ${weather.main.temp_min} °F</p>\r\n      <p>Max Temperature: ${weather.main.temp_max} °F</p>\r\n      <p>Humidity: ${weather.main.humidity}%</p>\r\n      `\r\n      document.getElementById('container').insertAdjacentHTML('beforeend', html)\r\n\r\n    })\r\n    .catch(error => {\r\n      console.error(error.message)\r\n      const html = `\r\n        <p>City does not exist</p>\r\n      `\r\n      document.getElementById('container').insertAdjacentHTML('beforeend', html)\r\n    });\r\n  }\r\n}\n\n//# sourceURL=webpack://weather-app/./src/frontend/weather.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ displayWeather)\n/* harmony export */ });\n/* harmony import */ var _backend_weatherapi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../backend/weatherapi */ \"./src/backend/weatherapi.js\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers */ \"./src/frontend/helpers.js\");\n\r\n\r\n\r\nfunction weatherContent(weather) {\r\n  return `\r\n    <p>Weather: ${weather.weather[0].description}</p>\r\n    <p>Temperature: ${weather.main.temp} °F</p>\r\n    <p>Min Temperature: ${weather.main.temp_min} °F</p>\r\n    <p>Max Temperature: ${weather.main.temp_max} °F</p>\r\n    <p>Humidity: ${weather.main.humidity}%</p>\r\n  `\r\n}\r\n\r\nfunction displayWeather() {\r\n  const submit = document.getElementById('submit')\r\n  submit.onclick = () => {\r\n    const weatherContainer = document.getElementById('weather-info') \r\n    ;(0,_helpers__WEBPACK_IMPORTED_MODULE_1__.default)(weatherContainer)\r\n    const city = document.getElementById('city').value\r\n    ;(0,_backend_weatherapi__WEBPACK_IMPORTED_MODULE_0__.default)(city.replaceAll(' ', '+'))\r\n      .then(weather => {\r\n        weatherContainer.insertAdjacentHTML('afterbegin', weatherContent(weather))\r\n      })\r\n      .catch(error => {\r\n        console.error(error.message)\r\n        weatherContainer.insertAdjacentHTML('afterbegin', `<p>City does not exist</p>`)\r\n      });\r\n  }\r\n}\n\n//# sourceURL=webpack://weather-app/./src/frontend/weather.js?");
 
 /***/ }),
 
@@ -36,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _frontend_weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./frontend/weather */ \"./src/frontend/weather.js\");\n// import getWeather from './backend/weatherapi'\r\n\r\n// getWeather('London')\r\n//   .then(data => console.log(data))\r\n//   .catch(error => console.error(error.message));\r\n\r\n\r\n\r\n(0,_frontend_weather__WEBPACK_IMPORTED_MODULE_0__.default)()\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _frontend_weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./frontend/weather */ \"./src/frontend/weather.js\");\n\r\n\r\n(0,_frontend_weather__WEBPACK_IMPORTED_MODULE_0__.default)()\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
