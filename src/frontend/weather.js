@@ -34,11 +34,15 @@ function assignBgImage(weather) {
   const container = document.getElementById('container');
   if (weather === 'Thunderstorm') {
     container.style.backgroundImage = "url('./images/thunderstorm3.jpg')";
-  } else if (weather === 'Rain') {
+  } else if (weather === 'Rain' || weather === 'Drizzle') {
     container.style.backgroundImage = "url('./images/rain5.jpg')";
   } else if (weather === 'Clouds') {
     container.style.backgroundImage = "url('./images/cloudy2.jpg')";
-  } else {
+  } else if (weather === 'Snow') {
+    container.style.backgroundImage = "url('./images/snow.jpg')";
+  } else if (weather === 'Fog') {
+    container.style.backgroundImage = "url('./images/fog.jpg')";
+  }else {
     container.style.backgroundImage = "url('./images/clear.jpg')";
   }
 }
