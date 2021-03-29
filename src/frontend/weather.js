@@ -42,7 +42,7 @@ function assignBgImage(weather) {
     container.style.backgroundImage = "url('./images/snow.jpg')";
   } else if (weather === 'Fog') {
     container.style.backgroundImage = "url('./images/fog.jpg')";
-  }else {
+  } else {
     container.style.backgroundImage = "url('./images/clear.jpg')";
   }
 }
