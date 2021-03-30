@@ -7,7 +7,6 @@ export default function removeChildren(parent) {
 export function switchTemperature() {
   const button = document.querySelector('.switch');
   const chk = document.querySelector('.switch input');
-  // chk.checked = false
   button.addEventListener('click', () => {
     chk.checked = !chk.checked;
     const slide = document.querySelector('.slide');
