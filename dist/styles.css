@@ -36,3 +36,42 @@ form{
   left: 50%;
   transform: translate(-50%, -70%);
 }
+
+.switch{
+  transition: all 0.3s ease-in-out;
+}
+
+.switch input{
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* .slider input:checked + .slider{
+  background: aqua;
+} */
+
+.slide{
+  height: 90%;
+  width: 1.5rem;
+  top: 50%;
+  left: 5%;
+  transform: translate(0,-50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.switch::before{
+  content: '°F';
+  position: absolute;
+  left: -75%;
+  top: 50%;
+  transform: translate(75%, -50%);
+}
+
+.switch::After{
+  content: '°C';
+  position: absolute;
+  right: -75%;
+  top: 50%;
+  transform: translate(-75%, -50%);
+}
